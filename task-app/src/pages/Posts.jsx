@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Posts() {
     const [posts, setPosts] = useState([])
@@ -18,8 +19,9 @@ function Posts() {
 
        <nav>
         <ul>
-            {posts.map(post => (
-                <li>{post.title}</li>
+            {posts.map(post => ( 
+                <li className='m-8'>
+                    <NavLink className='p-2 bg-fuchsia-400 m-2' key={post.id} to={`/posts/${post.id}`}>{post.title}</NavLink></li>
             ))}
             
         </ul>

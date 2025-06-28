@@ -9,6 +9,7 @@ import About from './pages/About.jsx'
 import Users from './pages/Users.jsx'
 import User from './pages/User.jsx'
 import Layout from './components/Layout.jsx'
+import Post from './pages/Post.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,8 +22,19 @@ const router = createBrowserRouter([
       },
       {
         path: "posts",
-        element: <Posts />
+        element: <Layout />,
+        children: [
+          {
+            index: true,
+            element: <Posts />
+          },
+          {
+            path: ":pid",
+            element: <Post />
+          }
+        ]
       },
+      
       {
         path: "about",
         element: <About />
