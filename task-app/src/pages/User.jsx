@@ -19,7 +19,7 @@ function User() {
                 <h5>{user.address.city}</h5>
             </section>
         ) : (
-            <p>Loading...</p>
+            <p className='flex justify-center items-center w-full h-screen'>Loading...</p>
         )}
       
     </div>

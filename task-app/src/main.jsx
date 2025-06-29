@@ -10,6 +10,7 @@ import Users from './pages/Users.jsx'
 import User from './pages/User.jsx'
 import Layout from './components/Layout.jsx'
 import Post from './pages/Post.jsx'
+import PostsWall from './pages/PostsWall.jsx'
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,17 @@ const router = createBrowserRouter([
       
       {
         path: "about",
-        element: <About />
+        element: <Layout />,
+        children: [
+          {
+            index: true,
+            element: <About />
+          },
+          {
+            path: "posts-wall",
+            element: <PostsWall />
+          }
+        ]
       },
       {
         path: "users",

@@ -16,11 +16,11 @@ function Post() {
     <div>
       { post ? (
         <section>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
+            <h3 className='p-3'>{post.title}</h3>
+            <p className='m-4 bg-teal-400 p-10'>{post.body}</p>
         </section>
       ) : (
-        <p>Loading...</p>
+        <p className='flex justify-center items-center h-screen w-full'>Loading...</p>
       )}
     </div>
   )
